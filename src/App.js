@@ -4,12 +4,18 @@ import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-ro
 import HomeComponent from './components/HomeComponent';
 import FlightComponent from './components/FlightComponent';
 import SignInComponent from './components/SignInComponent';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { signOut } from './actions';
 
 function App() {
   
+  const dispatch = useDispatch();
   const user = useSelector(state => state.loggedUser);
   console.log(user);
+
+  const signOutUser = () =>{
+    dispatch(signOut());
+  }
 
   return (
     <Router>
@@ -43,12 +49,13 @@ function App() {
             </div>
           </div>
         </nav>
-        <div className="user-section nav-link">
-                  <a> { user.isLogged ?  <p><i class="fa fa-user-circle-o" aria-hidden="true"></i>{user.info.firstName + ' '+ user.info.lastName}
-                  
-                  </p> : ''}</a>
-                  <Link className="nav-link" to="/signin"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
-        </div>
+        { user.isLogged ?  <div className="user-section nav-link">
+                  <a> 
+                    <p><i className='fa fa-user-circle-o' aria-hidden="true"></i>{user.info.firstName + ' '+ user.info.lastName}
+                  </p></a>
+                  <Link className="nav-link" to="/signin"><i onClick={signOutUser} class="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
+        </div> : '' 
+        }
       </header>
       <div className="body container">
         <Switch>
