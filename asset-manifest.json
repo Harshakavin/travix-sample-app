@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/travix-sample-app/static/css/main.a5331c63.css",
+    "main.js": "/travix-sample-app/static/js/main.6b9affc5.js",
+    "static/js/787.c1112931.chunk.js": "/travix-sample-app/static/js/787.c1112931.chunk.js",
+    "static/media/travix-logo_white.webp": "/travix-sample-app/static/media/travix-logo_white.fbe4c15125f564c1d306.webp",
+    "index.html": "/travix-sample-app/index.html",
+    "main.a5331c63.css.map": "/travix-sample-app/static/css/main.a5331c63.css.map",
+    "main.6b9affc5.js.map": "/travix-sample-app/static/js/main.6b9affc5.js.map",
+    "787.c1112931.chunk.js.map": "/travix-sample-app/static/js/787.c1112931.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5331c63.css",
+    "static/js/main.6b9affc5.js"
+  ]
+}
