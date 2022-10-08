@@ -1,0 +1,190 @@
+.App {
+  text-align: center;
+  background-image: url('https://www.travix.com/wp-content/uploads/2019/09/Homepage_BGslider_origineel.jpg');
+  background-repeat: round;
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+}
+
+.m-l-text{
+  margin-top: 10vh;
+  font-size: 60px;
+  font-weight: 400;
+  white-space: normal;
+  color: rgb(255, 255, 255);
+}
+
+.m-s-text{
+  margin-top: 5vh;
+  font-size: 20px;
+  white-space: normal;
+  color: rgb(255, 255, 255);
+}
+
+.sign-btn{
+  background: #965cc0;
+  font-size: 15px !important;
+  color: #fff !important;
+  border-color: #8244ad;
+  overflow: hidden;
+  background-clip: padding-box;
+  height: 44px;
+  transition: none 0s ease 0s;
+  text-align: inherit;
+  line-height: 44px;
+  border-width: 0px 0px 2px;
+  margin: 30px 10px;
+  padding: 0px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  width: 100px;
+}
+
+.App-logo {
+  height: 11vmin;
+  pointer-events: none;
+  position: absolute;
+  left: 15%;
+  top: 10px;
+  z-index: 8;
+}
+
+.gradient-background {
+  background: #0089d0;
+  background: -moz-linear-gradient(top, #0089d0 82%, #22b7bb 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(82%, #0089d0), color-stop(100%, #22b7bb));
+  background: -webkit-linear-gradient(top, #0089d0 82%, #22b7bb 100%);
+  background: -o-linear-gradient(top, #0089d0 82%, #22b7bb 100%);
+  background: -ms-linear-gradient(top, #0089d0 82%, #22b7bb 100%);
+  background: linear-gradient(to bottom, #0089d0 82%, #22b7bb 100%);
+  opacity: 0.7 !important;
+  position: absolute;
+  min-width: 100%;
+  filter: blur(8px);
+  -webkit-filter: blur(10px);
+  height: 100%;
+  position: absolute;
+  display: block;
+  visibility: visible;
+  left: 1px;
+  top: 0px;
+  z-index: 5;
+}
+
+.navbar {
+  z-index: 100;
+  position: fixed;
+  right: 15%;
+  top: 10px;
+}
+
+.nav-link {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.App-header {
+  background-color: none;
+  min-height: 13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.body {
+  z-index: 7;
+  background: none;
+  min-height: 90vh;
+  position: fixed;
+  min-width: 100%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.table{
+  background-color: #fff;
+  background: linear-gradient(to bottom, #e8f7ff 82%, #22b7bb 100%);
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+#myInput {
+  background-position: 10px 12px; 
+  background-repeat: no-repeat;  
+  width: 100%; 
+  height: 40px;
+  font-size: 16px;  
+  padding: 12px 20px 12px 40px;  
+  border: 1px solid #ddd;
+  margin-bottom: 12px; 
+}
+.fa{
+  /* position: absolute; */
+  padding: 7px;
+  text-align: center;
+}
+
+.date-picker {
+  padding: 5px;
+}
+
+.top-info-view{
+  padding-top: 6vh;
+  font-size: 18px;
+  color: #fffffd;
+  text-align: left;
+}
+
+.text-left{
+  text-align: left;
+}
+.top-5x{
+  margin-top: 5px;
+}
+.booking-btn{
+  padding: 8vh;
+}
+.btn-group{
+  width: -webkit-fill-available;
+}
+.btn-side{
+  margin-top: 8vh;
+  font-weight: 600;
+  border: 1px solid;
+  min-width: 19vh;
+}
+.sign-background{
+    display: block;
+    position: absolute;
+    top: 18vh;
+    left: 0;
+    right: 0;
+    max-width: 50vh;
+    background: linear-gradient(to bottom, #e8f7ff 82%, #22b7bb 100%);
+    padding: 3vh;
+    border-radius: 10px;
+}
+.sign-in-info{
+  left: 0;
+  right: 0;
+  padding-top: 6vh;
+  font-size: 18px;
+  color: #fffffd;
+  text-align: center;
+}
+.user-section{
+  z-index: 8;
+  position: absolute;
+  right: 3%;
+  top: 3%;
+}
