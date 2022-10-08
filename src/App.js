@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from './actions';
 
 function App() {
-  
+
   const dispatch = useDispatch();
   const user = useSelector(state => state.loggedUser);
   console.log(user);
@@ -53,7 +53,7 @@ function App() {
                   <a> 
                     <p><i className='fa fa-user-circle-o' aria-hidden="true"></i>{user.info.firstName + ' '+ user.info.lastName}
                   </p></a>
-                  <Link className="nav-link" to="/signin"><i onClick={signOutUser} class="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
+                  <Link className="nav-link" to="/signin"><i onClick={signOutUser} className="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
         </div> : '' 
         }
       </header>

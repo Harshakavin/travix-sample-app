@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchFlights } from '../actions';
+import BookingComponent from './BookingComponent';
 
 const options = [
     { value: 'ONE-WAY', label: 'One-Way' },
@@ -78,6 +79,7 @@ function FlightComponent() {
                     <div className="col col-md-4 col-sm-4 col-lg-4">
 
                     </div>
+                    
                 </div>
             </div>
             <div className="container table">
@@ -99,6 +101,12 @@ function FlightComponent() {
                         <DatePicker className='date-picker' selected={date} onChange={(date) => setDate(date)} />
                     </div>
                 </div>
+                {booking ?
+                    <div className='row'>
+                        <BookingComponent hide={() => setBooking(false)} info={chooseFlight} reset={reset} />
+                    </div>
+                    : ''
+                }
 
                 <table className="table table-hover">
                     <thead>

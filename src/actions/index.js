@@ -1,7 +1,7 @@
 
 import { fetchFlightData } from '../apis/flightsApi';
 import { login } from '../apis/userApi';
-import { SETSFLIGHTS, SIGN_IN, SIGN_OUT } from './actionTypes';
+import { ADDBOOKING, CLOSEBOOKING, SETSFLIGHTS, SIGN_IN, SIGN_OUT, UPDATEBOOKING } from './actionTypes';
 
 export const fetchFlights = () => {
     return async function (dispatch, getState){
@@ -30,5 +30,41 @@ export const setUser = (user) => {
 export const signOut = () => {
     return {
         type: SIGN_OUT
+    }
+}
+
+export const setBooking = (bookings) => {
+    return {
+        type: ADDBOOKING,
+        payload: {
+            bookings : bookings
+        }
+    }
+}
+
+export const addBooking = (booking) => {
+    return {
+        type: ADDBOOKING,
+        payload: {
+            booking: booking
+        }
+    }
+}
+
+export const updateBooking = (num) => {
+    return {
+        type: UPDATEBOOKING,
+        payload: {
+            num: num
+        }
+    }
+}
+
+export const closeBooking = (num) => {
+    return {
+        type: CLOSEBOOKING,
+        payload: {
+            num: num
+        }
     }
 }
