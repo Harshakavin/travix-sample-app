@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/travix-sample-app/static/css/main.a5331c63.css",
-    "main.js": "/travix-sample-app/static/js/main.f3bdfb1b.js",
+    "main.css": "/travix-sample-app/static/css/main.7eeab1c9.css",
+    "main.js": "/travix-sample-app/static/js/main.ff683e60.js",
     "static/js/787.c1112931.chunk.js": "/travix-sample-app/static/js/787.c1112931.chunk.js",
     "static/media/travix-logo_white.webp": "/travix-sample-app/static/media/travix-logo_white.fbe4c15125f564c1d306.webp",
     "index.html": "/travix-sample-app/index.html",
-    "main.a5331c63.css.map": "/travix-sample-app/static/css/main.a5331c63.css.map",
-    "main.f3bdfb1b.js.map": "/travix-sample-app/static/js/main.f3bdfb1b.js.map",
+    "main.7eeab1c9.css.map": "/travix-sample-app/static/css/main.7eeab1c9.css.map",
+    "main.ff683e60.js.map": "/travix-sample-app/static/js/main.ff683e60.js.map",
     "787.c1112931.chunk.js.map": "/travix-sample-app/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5331c63.css",
-    "static/js/main.f3bdfb1b.js"
+    "static/css/main.7eeab1c9.css",
+    "static/js/main.ff683e60.js"
   ]
 }
