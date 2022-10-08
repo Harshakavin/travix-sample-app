@@ -79,7 +79,9 @@ function FlightComponent() {
                     <div className="col col-md-4 col-sm-4 col-lg-4">
 
                     </div>
-                    
+                    <div className="col col-md-2">
+                        <Link className='booking-btn' to="/travix-sample-app/bookings"><button type="button" className="btn btn-primary btn-md btn-side">Your Bookings</button></Link>
+                    </div>
                 </div>
             </div>
             <div className="container table">
@@ -89,10 +91,10 @@ function FlightComponent() {
                         <Select value={way} options={options} onChange={(way) => setWay(way)} />
                     </div>
                     <div className="col col-md-3 col-sm-3 col-lg-3 top-5x">
-                        <input type="text" disabled={booking} id="myInput" value={from} onChange={(e) => setFrom(e.target.value.trim())} placeholder="YOUR FLIGHT FROM" />
+                        <input type="text" disabled={booking} className="myInput" value={from} onChange={(e) => setFrom(e.target.value.trim())} placeholder="YOUR FLIGHT FROM" />
                     </div>
                     <div className="col col-md-3 col-sm-3 col-lg-3 top-5x">
-                        <input type="text" disabled={booking} id="myInput" value={to} onChange={(e) => setTo(e.target.value.trim())} placeholder="YOUR FLIGHT TO" />
+                        <input type="text" disabled={booking} className="myInput" value={to} onChange={(e) => setTo(e.target.value.trim())} placeholder="YOUR FLIGHT TO" />
                     </div>
                     <div className="col col-md-1">
                         <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>

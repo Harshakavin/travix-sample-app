@@ -118,7 +118,7 @@
   padding-bottom: 20px;
 }
 
-#myInput {
+.myInput {
   background-position: 10px 12px; 
   background-repeat: no-repeat;  
   width: 100%; 
@@ -152,7 +152,7 @@
   margin-top: 5px;
 }
 .booking-btn{
-  padding: 8vh;
+  /* padding: 8vh; */
 }
 .btn-group{
   width: -webkit-fill-available;

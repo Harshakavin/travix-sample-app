@@ -6,6 +6,7 @@ import FlightComponent from './components/FlightComponent';
 import SignInComponent from './components/SignInComponent';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from './actions';
+import BookingHistoryComponent from './components/BookingHistoryComponent';
 
 function App() {
 
@@ -68,7 +69,8 @@ function App() {
           <Route path="/travix-sample-app/signin">
               <SignInComponent/>
           </Route>
-          <Route path="/travix-sample-app/flights" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <FlightComponent/>} />        
+          <Route path="/travix-sample-app/flights" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <FlightComponent/>} />
+          <Route path="/travix-sample-app/bookings" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <BookingHistoryComponent/>} />
         </Switch>
       </div>
     </div>

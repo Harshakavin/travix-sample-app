@@ -46,8 +46,8 @@ function SignInComponent() {
                 </div>
             </div>
             <div className="container sign-background">
-                <input type="text" id="myInput" onChange={usernameChanage} placeholder="USERNAME" />
-                <input type="password" id="myInput" onChange={passwordCnage} placeholder="PASSWORD" />
+                <input type="text" className="myInput" onChange={usernameChanage} placeholder="USERNAME" />
+                <input type="password" className="myInput" onChange={passwordCnage} placeholder="PASSWORD" />
                 <p>{error}</p>
                 <button disabled={!username || !password} type="button" onClick={loggin} className="btn sign-btn">Sign in</button>
             </div>

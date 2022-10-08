@@ -32,7 +32,7 @@ function BookingComponent({ hide, info, reset }) {
             dispatch(addBooking(info));
             reset();
             hide();
-            navigate.push('/bookings');
+            navigate.push('/travix-sample-app/bookings');
         }
     }
 
@@ -40,10 +40,10 @@ function BookingComponent({ hide, info, reset }) {
         <div>
             <div className="row">
                 <div className="col col-md-3 to-from">
-                    <input type="text" id="myInput" onKeyUp={(e) => setName(e.target.value.trim())} placeholder="YOUR NAME" />
+                    <input type="text" className="myInput" onKeyUp={(e) => setName(e.target.value.trim())} placeholder="YOUR NAME" />
                 </div>
                 <div className="col col-md-3 to-from">
-                    <input type="text" id="myInput" onKeyUp={(e) => setPassportNo(e.target.value.trim())} placeholder="PASSPORT NO" />
+                    <input type="text" className="myInput" onKeyUp={(e) => setPassportNo(e.target.value.trim())} placeholder="PASSPORT NO" />
                 </div>
                 <div className="col col-md-3">
                     <Select options={options} onChange={(s) => setSeat(s)} />
