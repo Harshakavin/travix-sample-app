@@ -53,19 +53,22 @@ function App() {
                   <a> 
                     <p><i className='fa fa-user-circle-o' aria-hidden="true"></i>{user.info.firstName + ' '+ user.info.lastName}
                   </p></a>
-                  <Link className="nav-link" to="/signin"><i onClick={signOutUser} className="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
+                  <Link className="nav-link" to="/travix-sample-app/"><i onClick={signOutUser} className="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
         </div> : '' 
         }
       </header>
       <div className="body container">
         <Switch>
           <Route exact path="/">
+              <Redirect to='/travix-sample-app' />
+          </Route>
+          <Route exact path="/travix-sample-app">
               <HomeComponent/>
           </Route>
-          <Route path="/signin">
+          <Route path="/travix-sample-app/signin">
               <SignInComponent/>
           </Route>
-          <Route path="/flights" render={() => !user.isLogged ?  <Redirect to='/signin' /> :  <FlightComponent/>} />        
+          <Route path="/travix-sample-app/flights" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <FlightComponent/>} />        
         </Switch>
       </div>
     </div>

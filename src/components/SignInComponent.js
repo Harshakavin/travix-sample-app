@@ -19,7 +19,7 @@ function SignInComponent() {
          setLoading(true)
          login({username,password}).then( response =>{
             dispatch(setUser(response));
-            navigate.push('/flights');
+            navigate.push('/travix-sample-app/flights');
         }).catch(err=>{
             console.log(err);
             setLoading(false);
@@ -49,7 +49,7 @@ function SignInComponent() {
                 <input type="text" id="myInput" onChange={usernameChanage} placeholder="USERNAME" />
                 <input type="password" id="myInput" onChange={passwordCnage} placeholder="PASSWORD" />
                 <p>{error}</p>
-                <button type="button" onClick={loggin} className="btn sign-btn">Sign in</button>
+                <button disabled={!username || !password} type="button" onClick={loggin} className="btn sign-btn">Sign in</button>
             </div>
         </div>
     );

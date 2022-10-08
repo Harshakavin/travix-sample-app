@@ -14,8 +14,8 @@ function HomeComponent() {
                 </div>
                 <div>
                 {user.isLogged ? 
-                <Link to="/flights"><button type="button" className="btn sign-btn">Flights</button></Link> :
-                <Link to="/signin"><button type="button" className="btn sign-btn">Sign In</button></Link> 
+                <Link to="/travix-sample-app/flights"><button type="button" className="btn sign-btn">Flights</button></Link> :
+                <Link to="/travix-sample-app/signin"><button type="button" className="btn sign-btn">Sign In</button></Link> 
                 }
                 </div>
             </div>
