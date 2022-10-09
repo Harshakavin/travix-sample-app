@@ -8,7 +8,7 @@ const bookingReducer = (state = [], action) => {
     switch (action.type) {
         case SETBOOKING:
             {
-                return [action.payload.bookings]
+                return action.payload.bookings
             }
         case ADDBOOKING:
             {

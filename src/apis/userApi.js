@@ -7,6 +7,7 @@ export default axios.create({
 
 export function login(username,password)  {
     return new Promise((resolve, reject) => {
-        resolve({ firstName : "Harsha", lastName : "Kavinda" });
+        //sign api mocked
+        resolve({ firstName : username, lastName : "", userName: "admin" });
     }); 
 }

@@ -3,8 +3,8 @@ import DatePicker from "react-datepicker";
 import { useEffect, useState } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchFlights } from '../actions';
+import { Link, useHistory } from 'react-router-dom';
+import { fetchBooking, fetchFlights } from '../actions';
 import BookingComponent from './BookingComponent';
 
 const options = [
@@ -15,6 +15,7 @@ const options = [
 function FlightComponent() {
 
     const dispatch = useDispatch();
+    const navigate = useHistory();
 
     const flightsData = useSelector(state => state.flights);
 
@@ -68,6 +69,11 @@ function FlightComponent() {
         setBooking(true);
     }
 
+    const redirectToBookingHistory = () => {
+        dispatch(fetchBooking());
+        navigate.push('/travix-sample-app/bookings');
+    }
+
     return (
         <div>
             <div className="container top-info-view">
@@ -79,15 +85,15 @@ function FlightComponent() {
                     <div className="col col-md-4 col-sm-4 col-lg-4">
 
                     </div>
-                    <div className="col col-md-2">
-                        <Link className='booking-btn' to="/travix-sample-app/bookings"><button type="button" className="btn btn-primary btn-md btn-side">Your Bookings</button></Link>
+                    <div className="col col-md-2 booking-btn">
+                        <button type="button" onClick={redirectToBookingHistory} className="btn btn-primary btn-md btn-side ">Your Bookings</button>
                     </div>
                 </div>
             </div>
-            <div className="container table">
+            <div className="row table">
                 <br />
-                <div className="row">
-                    <div className="col col-md-2 col-sm-2 col-lg-2">
+                <div className="row container top-view">
+                    <div className="col col-md-3 col-sm-3 col-lg-3">
                         <Select value={way} options={options} onChange={(way) => setWay(way)} />
                     </div>
                     <div className="col col-md-3 col-sm-3 col-lg-3 top-5x">
@@ -96,10 +102,8 @@ function FlightComponent() {
                     <div className="col col-md-3 col-sm-3 col-lg-3 top-5x">
                         <input type="text" disabled={booking} className="myInput" value={to} onChange={(e) => setTo(e.target.value.trim())} placeholder="YOUR FLIGHT TO" />
                     </div>
-                    <div className="col col-md-1">
+                    <div className="col col-md-3 col-sm-3 col-lg-3 inline-block">
                         <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
-                    </div>
-                    <div className="col col-md-2 col-sm-2 col-lg-2">
                         <DatePicker className='date-picker' selected={date} onChange={(date) => setDate(date)} />
                     </div>
                 </div>

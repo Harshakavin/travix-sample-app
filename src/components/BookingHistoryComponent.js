@@ -1,7 +1,12 @@
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchBooking } from "../actions";
 
 function BookingHistoryComponent() {
+
+    const dispatch = useDispatch();
+    const [loading, setLoading] = useState(true);
 
     const bookingData = useSelector(state => state.bookingData);
     console.log(bookingData);
@@ -9,12 +14,19 @@ function BookingHistoryComponent() {
         return bookingData;
     }
 
+    useEffect(() => {
+        if (bookingData.length == 0) {
+            dispatch(fetchBooking());
+        }
+        setTimeout(() => { setLoading(false); }, 2000);
+    }, [fetchBooking]);
+
     return (
         <div>
             <div className="container top-info-view">
                 <div className='row'>
                     <div className="col col-md-6">
-                        <h1>Your Bookings <i class="fa fa-ticket fa-2x" aria-hidden="true"></i></h1>
+                        <h1>Your Bookings <i className="fa fa-ticket fa-2x" aria-hidden="true"></i></h1>
                         <p className='font-weight-light'>Safe travel</p>
                     </div>
                     <div className="col col-md-4">
@@ -29,7 +41,7 @@ function BookingHistoryComponent() {
                 <table className="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Full Name</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Trip</th>
                             <th scope="col">From</th>
                             <th scope="col">To</th>
@@ -45,13 +57,13 @@ function BookingHistoryComponent() {
                     <tbody>
                         {getBookings().map((booking, index) =>
                             <tr key={index}>
-                                <th>{booking.fullname}</th>
+                                <th>{booking.name}</th>
                                 <td>{booking.way}</td>
                                 <td>{booking.from}</td>
                                 <td>{booking.to}</td>
-                                <td>{booking.date.split('T')[0]}</td>
-                                <td>{booking.name + " " + booking.code} </td>
-                                <td><i className="fa fa-plane fa-1x" aria-hidden="true"></i>{booking.bording}</td>
+                                <td>{booking.date && booking.date.split('T')[0]}</td>
+                                <td>{booking.flightCode + " " + booking.group} </td>
+                                <td><i className="fa fa-plane fa-1x switch-side" aria-hidden="true"></i>{booking.arrivalTime}</td>
                                 <td><i className="fa fa-plane fa-1x" aria-hidden="true"></i>{booking.departing}</td>
                                 <td>Seat-{booking.seat}</td>
                                 <td>{booking.cost}</td>
@@ -59,9 +71,13 @@ function BookingHistoryComponent() {
                         )}
                     </tbody>
                 </table>
-                {bookingData.length === 0 ?
+                {bookingData.length === 0 && !loading ?
 
                     <p><b>No bookings</b></p> : ''
+                }
+                { bookingData.length === 0 && loading ?
+
+                    <p><b>Please wait...</b></p> : ''
                 }
             </div>
         </div>

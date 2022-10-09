@@ -8,6 +8,8 @@
   height: 100%;
   z-index: -1;
   background-size: cover;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .m-l-text{
@@ -66,7 +68,7 @@
   min-width: 100%;
   filter: blur(8px);
   -webkit-filter: blur(10px);
-  height: 100%;
+  height: 75%;
   position: absolute;
   display: block;
   visibility: visible;
@@ -103,8 +105,8 @@
   z-index: 7;
   background: none;
   min-height: 90vh;
-  position: fixed;
-  min-width: 100%;
+  position: relative;
+  min-width: 80%;
 }
 
 .App-link {
@@ -116,6 +118,8 @@
   background: linear-gradient(to bottom, #e8f7ff 82%, #22b7bb 100%);
   border-radius: 10px;
   padding-bottom: 20px;
+  overflow-x: auto;
+  padding: 10px;
 }
 
 .myInput {
@@ -136,6 +140,7 @@
 
 .date-picker {
   padding: 5px;
+  width: 100px;
 }
 
 .top-info-view{
@@ -169,7 +174,7 @@
     top: 18vh;
     left: 0;
     right: 0;
-    max-width: 50vh;
+    max-width: 40vh;
     background: linear-gradient(to bottom, #e8f7ff 82%, #22b7bb 100%);
     padding: 3vh;
     border-radius: 10px;
@@ -187,4 +192,13 @@
   position: absolute;
   right: 3%;
   top:2%;
+}
+.top-view{
+  min-width: 65vh;
+}
+.inline-block{
+  display: inline-flex;
+}
+.switch-side{
+  Transform: rotate(180deg);
 }

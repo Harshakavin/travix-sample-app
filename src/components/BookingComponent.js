@@ -14,7 +14,6 @@ const options = [
     { value: '50', label: 'Seat 50' },
 ]
 
-
 function BookingComponent({ hide, info, reset }) {
 
     const [seat, setSeat] = useState(null);
@@ -26,10 +25,14 @@ function BookingComponent({ hide, info, reset }) {
 
     const book = () => {
         if (seat && name && passportNo) {
-            info['fullname'] = name;
+            info['group'] = info['name'];
+            info['name'] = name;
             info['passportNo'] = passportNo;
-            info['seat'] = seat.value
-            dispatch(addBooking(info));
+            info['seat'] = seat.value;
+            info['status'] = "Open";
+            info['flightCode'] = info['code'];
+            info['arrivalTime'] = info['bording'];
+            dispatch(addBooking(info)); 
             reset();
             hide();
             navigate.push('/travix-sample-app/bookings');
@@ -38,7 +41,7 @@ function BookingComponent({ hide, info, reset }) {
 
     return (
         <div>
-            <div className="row">
+            <div className="row top-view">
                 <div className="col col-md-3 to-from">
                     <input type="text" className="myInput" onKeyUp={(e) => setName(e.target.value.trim())} placeholder="YOUR NAME" />
                 </div>

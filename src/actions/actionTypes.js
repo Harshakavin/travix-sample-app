@@ -5,3 +5,4 @@ export const SETBOOKING = "SETBOOKING";
 export const ADDBOOKING = "ADDBOOKING";
 export const UPDATEBOOKING = "UPDATEBOOKING";
 export const CLOSEBOOKING = "CLOSEBOOKING";
+export const sessionkey = 'lggedUser';

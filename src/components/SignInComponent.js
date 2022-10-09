@@ -17,7 +17,7 @@ function SignInComponent() {
 
     const loggin = () => {
          setLoading(true)
-         login({username,password}).then( response =>{
+         login(username,password).then( response =>{
             dispatch(setUser(response));
             navigate.push('/travix-sample-app/flights');
         }).catch(err=>{
