@@ -9,7 +9,7 @@
   z-index: -1;
   background-size: cover;
   overflow-y: auto;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .m-l-text{
