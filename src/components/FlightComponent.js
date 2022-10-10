@@ -8,7 +8,7 @@ import { fetchBooking, fetchFlights } from '../actions';
 import BookingComponent from './BookingComponent';
 
 const options = [
-    { value: 'ONE-WAY', label: 'One-Way' },
+    { value: 'ONE-WAY', label: 'ONE-WAY' },
     { value: 'RETURN', label: 'RETURN' },
 ]
 
@@ -90,7 +90,7 @@ function FlightComponent() {
             <div className="table container">
                 <br />
                 <div className="row container top-view">
-                    <div className="col col-md-3 col-sm-3 col-lg-3">
+                    <div className="col col-md-3 col-sm-3 col-lg-3 d-way">
                         <Select value={way} options={options} onChange={(way) => setWay(way)} />
                     </div>
                     <div className="col col-md-3 col-sm-3 col-lg-3 top-5x">
@@ -105,7 +105,7 @@ function FlightComponent() {
                     </div>
                 </div>
                 {booking ?
-                    <div className='row'>
+                    <div>
                         <BookingComponent hide={() => setBooking(false)} info={chooseFlight} reset={reset} />
                     </div>
                     : ''

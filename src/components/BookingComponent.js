@@ -40,7 +40,7 @@ function BookingComponent({ hide, info, reset }) {
     }
 
     return (
-        <div>
+        <div className="container">
             <div className="row top-view">
                 <div className="col col-md-3 to-from">
                     <input type="text" className="myInput" onKeyUp={(e) => setName(e.target.value.trim())} placeholder="YOUR NAME" />
