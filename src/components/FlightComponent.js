@@ -78,19 +78,16 @@ function FlightComponent() {
         <div>
             <div className="container top-info-view">
                 <div className='row'>
-                    <div className="col col-md-6 col-sm-6 col-lg-6">
+                    <div className="col col-md-10 col-sm-10 col-lg-10">
                         <h1>Flights <i className="fa fa-paper-plane fa-2x" aria-hidden="true"></i></h1>
                         <p className='font-weight-light'>Reach your destination safe and affordably  </p>
-                    </div>
-                    <div className="col col-md-4 col-sm-4 col-lg-4">
-
                     </div>
                     <div className="col col-md-2 booking-btn">
                         <button type="button" onClick={redirectToBookingHistory} className="btn btn-primary btn-md btn-side ">Your Bookings</button>
                     </div>
                 </div>
             </div>
-            <div className="row table">
+            <div className="table container">
                 <br />
                 <div className="row container top-view">
                     <div className="col col-md-3 col-sm-3 col-lg-3">

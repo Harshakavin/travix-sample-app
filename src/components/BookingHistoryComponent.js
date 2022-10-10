@@ -25,14 +25,11 @@ function BookingHistoryComponent() {
         <div>
             <div className="container top-info-view">
                 <div className='row'>
-                    <div className="col col-md-6">
+                    <div className="col col-md-10 col-sm-10 col-lg-10">
                         <h1>Your Bookings <i className="fa fa-ticket fa-2x" aria-hidden="true"></i></h1>
                         <p className='font-weight-light'>Safe travel</p>
                     </div>
-                    <div className="col col-md-4">
-
-                    </div>
-                    <div className="col col-md-2">
+                    <div className="col col-md-2 col-sm-2 col-lg-2">
                         <Link className='booking-btn' to="/travix-sample-app/flights"><button type="button" className="btn btn-primary btn-md btn-side">Flights</button></Link>
                     </div>
                 </div>

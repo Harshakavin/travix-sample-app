@@ -54,7 +54,7 @@ function App() {
                   <a> 
                     <p><i className='fa fa-user-circle-o' aria-hidden="true"></i>{user.info.firstName + ' '+ user.info.lastName}
                   </p></a>
-                  <Link className="nav-link" to="/travix-sample-app/"><i onClick={signOutUser} className="fa fa-sign-out fa-2x" aria-hidden="true"></i></Link>
+                  <Link className="nav-link" to="/travix-sample-app/"><i onClick={signOutUser} className="fa fa-sign-out fa-3x" aria-hidden="true"></i></Link>
         </div> : '' 
         }
       </header>
@@ -63,9 +63,9 @@ function App() {
           <Route exact path="/"><Redirect to='/travix-sample-app' /></Route>
           <Route exact path="/travix-sample-app"><HomeComponent/></Route>
           <Route exact path="/travix-sample-app/signin"  render={() => user.isLogged ?  <Redirect to='/travix-sample-app/' />: <SignInComponent/>} />
-          <Route path="/travix-sample-app/flights" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <FlightComponent/>} />
-          <Route path="/travix-sample-app/bookings" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <BookingHistoryComponent/>} />
-          <Route render={() =>   <HomeComponent/>} />
+          <Route exact path="/travix-sample-app/flights" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <FlightComponent/>} />
+          <Route exact path="/travix-sample-app/bookings" render={() => !user.isLogged ?  <Redirect to='/travix-sample-app/signin' /> :  <BookingHistoryComponent/>} />
+          <Route path="*" render={() =>   <HomeComponent/>} />
         </Switch>
       </div>
     </div>
