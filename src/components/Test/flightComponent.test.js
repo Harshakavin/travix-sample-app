@@ -1,8 +1,10 @@
-import { render, waitFor, screen } from "@testing-library/react";
+import { fireEvent, render, waitFor, screen } from "@testing-library/react";
 import { setFlights } from "../../actions";
 import FlightComponent from "../components";
+import { createMemoryHistory } from 'history';
 
 jest.mock("axios");
+//jest.mock('./travix-sample-app/flights', () => () => 'SomeComponent');
 
 const dummyFlights = 
     [
@@ -23,3 +25,12 @@ const flightList = await waitFor(() => screen.findAllByTestId("flightList"));
 
 expect(flightList).toHaveLength(5);
 });
+
+describe('Flight button click', () => {
+    test('should pass', () => {
+      const history = createMemoryHistory({ initialEntries: ['/travix-sample-app'] });
+      expect(history.location.pathname).toBe('/travix-sample-app');
+      fireEvent.click('#flights');
+      expect(history.location.pathname).toBe('/travix-sample-app/flights');
+    });
+  });
