@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { key } from '../actions';
 import { sessionkey } from '../actions/actionTypes';
 
 const user = localStorage.getItem(sessionkey);

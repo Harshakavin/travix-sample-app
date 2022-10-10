@@ -70,6 +70,16 @@ export const signOut = () => {
     }
 }
 
+export const setFlights = (flights) => {
+    return {
+        type: SETSFLIGHTS,
+        payload: {
+            flights: flights
+        }
+    }
+}
+
+
 // export const updateBooking = (num) => {
 //     return {
 //         type: UPDATEBOOKING,

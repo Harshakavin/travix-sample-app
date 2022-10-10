@@ -49,7 +49,7 @@ function FlightComponent() {
                                                              (new Date(f.date).toLocaleDateString("en-US") === date.toLocaleDateString("en-US")) &&
                                                              (!chooseFlight || f.id === chooseFlight.id)) : [];
 
-        return filter;
+        return filter.sort((a,b) => a.to.toLowerCase() > b.to.toLowerCase() ? 1 : -1);
     }
 
     const reset = () => {
@@ -129,7 +129,7 @@ function FlightComponent() {
                     </thead>
                     <tbody>
                         {getFilterFlights().map(flight =>
-                            <tr key={flight.id}>
+                            <tr key={flight.id} data-testid="flightList">
                                 {/* <th scope="row">{flight.id}</th> */}
                                 <td>{flight.name + " " + flight.code} </td>
                                 <td className='text-left'>{flight.from}</td>
